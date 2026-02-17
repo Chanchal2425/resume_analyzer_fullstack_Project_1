@@ -1,3 +1,75 @@
+📊The Resume Analyzer Pro is a full stack web application that helps job seekers optimize their resumes for Applicant Tracking Systems (ATS). Users can upload their PDF resume, paste a job description, and get an instant compatibility score along with matched and missing skills. It's built with React on the frontend and Node.js/Express on the backend
+
+
+❓The Problem It Solves
+"Many companies use ATS software to filter resumes before a human ever sees them. These systems scan for specific keywords and skills mentioned in the job description. If your resume doesn't include those keywords, it gets rejected automatically. My tool helps candidates identify gaps in their resume so they can tailor it for each job application.
+
+✨Frontend Architecture (React)
+Component Structure:
+
+The entire application is a single React component called ResumeUploader
+
+It manages several pieces of state using useState:
+file – the uploaded PDF file
+fileName – just the name for display
+jobDesc – the job description text
+result – the analysis data from backend
+loading – boolean for showing spinner
+
+✨Key UI Sections:
+
+Header – Logo, title, and a "Test Connection" button
+Input Section – Two cards side by side:
+Job description textarea with character count
+File upload area with drag‑and‑drop style
+
+Results Section – Appears after analysis:
+Circular progress bar showing ATS score
+Stats cards (matched/missing/total skills)
+Two skill tag lists (matched in green, missing in red)
+Summary text with recommendation
+Extracted resume preview
+
+User Experience Features:
+Button disabled until both file and JD are provided
+Loading spinner during API call
+Clear error messages
+Color-coded score (green/orange/red)
+
+
+⚡Backend Architecture (Node.js/Express)
+Key Technologies:
+
+Express – web server framework
+Multer – handles file uploads
+pdf-parse / pdfreader – extract text from PDFs
+CORS – allows frontend to communicate
+Folder Structure:
+server.js – main server file with all endpoints
+No separate folders (for simplicity), but in production I'd organize into routes, controllers, services
+
+
+👏Special Features I Added
+1. Multiple PDF Extraction Methods
+2. Test Connection Button
+3. Skill Variations Handling
+4. Visual Score Circle
+5. Character Counter
+
+For storage concern and following a good practice insured to upload only the necessary files for user understanding.
+
+📸Snapshot of the project -
+
+
+<img width="1849" height="917" alt="Screenshot 2025-12-08 110733" src="https://github.com/user-attachments/assets/afb3d6d1-8c5d-4902-ae4a-850ffb3dc5f5" />
+
+<img width="1850" height="918" alt="Screenshot 2025-12-08 110815" src="https://github.com/user-attachments/assets/cdc40748-29f0-45f4-bd2c-52c9a43bdc44" />
+
+<img width="1846" height="898" alt="Screenshot 2025-12-08 110848" src="https://github.com/user-attachments/assets/836e9ec0-97eb-4a04-88fc-5545fb127224" />
+
+<img width="1843" height="912" alt="Screenshot 2025-12-08 110927" src="https://github.com/user-attachments/assets/cb1e1c2a-df62-4079-9e78-2007cf892938" />
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
